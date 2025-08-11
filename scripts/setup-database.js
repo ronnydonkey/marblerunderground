@@ -13,7 +13,7 @@ const path = require('path')
 
 // Database connection
 const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL_NON_POOLING || "postgres://postgres.lckljiicdebhdszeipkf:zAG0oDvAE5BjVzmH@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require",
+  connectionString: process.env.POSTGRES_URL_NON_POOLING,
   ssl: {
     rejectUnauthorized: false
   }

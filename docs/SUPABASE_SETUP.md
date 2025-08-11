@@ -363,9 +363,9 @@ Now add your environment variables to Vercel:
 4. Add these variables:
 
 ```
-NEXT_PUBLIC_SUPABASE_URL = https://lckljiicdebhdszeipkf.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxja2xqaWljZGViaGRzemVpcGtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4NjM2MTIsImV4cCI6MjA3MDQzOTYxMn0.AiJfo4f4x4PrzeYEWjFMFXaNAc-QZWLN1tVz1LIGRlE
-SUPABASE_SERVICE_ROLE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxja2xqaWljZGViaGRzemVpcGtmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDg2MzYxMiwiZXhwIjoyMDcwNDM5NjEyfQ.ZOonvXf-u9yS1kMjJWuuEwri5GelGBjygq4TTCpE7f8
+NEXT_PUBLIC_SUPABASE_URL = your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY = your-supabase-anon-key
+SUPABASE_SERVICE_ROLE_KEY = your-supabase-service-role-key
 NEXT_PUBLIC_APP_URL = https://www.marblerunderground.com
 ```
 
