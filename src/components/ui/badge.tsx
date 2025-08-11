@@ -87,7 +87,7 @@ export function StatusBadge({
   const config = configs[status]
   
   return (
-    <Badge variant={config.variant} icon={config.icon} pulse={config.pulse}>
+    <Badge variant={config.variant} icon={config.icon} pulse={'pulse' in config ? config.pulse : undefined}>
       {config.label}
     </Badge>
   )

@@ -5,10 +5,10 @@ import { supabase } from '@/lib/supabase/client'
 import { PieceRecognitionService } from '@/lib/ai/piece-recognition'
 import type { 
   AICollectionSession, 
-  PhotoAnalysisResult, 
   CollectionUpdateResult, 
   DetectedPiece 
 } from '@/lib/types/ai-collection'
+import type { PhotoAnalysisResult } from '@/lib/types/database'
 
 export function useAICollection() {
   const [currentSession, setCurrentSession] = useState<AICollectionSession | null>(null)
@@ -221,7 +221,7 @@ export function useAICollection() {
     if (!currentSession) return []
     
     return currentSession.photos.reduce((acc, photo) => {
-      return acc.concat(photo.detected_pieces)
+      return acc.concat(photo.detected_pieces as DetectedPiece[])
     }, [] as DetectedPiece[])
   }, [currentSession])
 

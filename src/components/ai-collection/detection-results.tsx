@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { X, Eye, AlertTriangle, Package, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { DetectedPiece, PhotoAnalysisResult } from '@/lib/types/ai-collection'
+import type { DetectedPiece } from '@/lib/types/ai-collection'
+import type { PhotoAnalysisResult } from '@/lib/types/database'
 
 interface DetectionResultsProps {
   result: PhotoAnalysisResult
@@ -18,8 +19,11 @@ export function DetectionResults({
   onRejectPiece,
   className
 }: DetectionResultsProps) {
+  // Type-safe conversion of detected pieces
+  const detectedPieces = (result.detected_pieces as DetectedPiece[]) || []
+  
   const [selectedPieces, setSelectedPieces] = useState<Set<string>>(
-    new Set(result.detected_pieces.map(p => p.id))
+    new Set(detectedPieces.map(p => p.id))
   )
   const [isAdding, setIsAdding] = useState(false)
   const [showDetails, setShowDetails] = useState(false)
@@ -35,7 +39,7 @@ export function DetectionResults({
   }
 
   const handleAddSelected = async () => {
-    const piecesToAdd = result.detected_pieces.filter(p => selectedPieces.has(p.id))
+    const piecesToAdd = detectedPieces.filter(p => selectedPieces.has(p.id))
     setIsAdding(true)
     try {
       await onAddToCollection(piecesToAdd)
@@ -97,15 +101,15 @@ export function DetectionResults({
           </div>
           <div className="text-center p-4 bg-green-50 rounded-lg">
             <div className="text-2xl font-bold text-green-600">
-              {result.detected_pieces.filter(p => p.confidence >= 0.8).length}
+              {detectedPieces.filter(p => p.confidence >= 0.8).length}
             </div>
             <div className="text-sm text-green-800">High Confidence</div>
           </div>
           <div className="text-center p-4 bg-purple-50 rounded-lg">
             <div className="text-2xl font-bold text-purple-600">
               {Math.round(
-                result.detected_pieces.reduce((acc, p) => acc + p.confidence, 0) / 
-                result.detected_pieces.length * 100
+                detectedPieces.reduce((acc, p) => acc + p.confidence, 0) / 
+                detectedPieces.length * 100
               )}%
             </div>
             <div className="text-sm text-purple-800">Avg. Confidence</div>
@@ -150,7 +154,7 @@ export function DetectionResults({
           </div>
           
           <div className="divide-y">
-            {result.detected_pieces.map((piece) => (
+            {detectedPieces.map((piece) => (
               <div
                 key={piece.id}
                 className={`p-4 hover:bg-gray-50 transition-colors ${
@@ -224,7 +228,7 @@ export function DetectionResults({
         <Button
           variant="outline"
           onClick={() => {
-            const highConfidencePieces = result.detected_pieces.filter(p => p.confidence >= 0.8)
+            const highConfidencePieces = detectedPieces.filter(p => p.confidence >= 0.8)
             setSelectedPieces(new Set(highConfidencePieces.map(p => p.id)))
           }}
         >
@@ -233,7 +237,7 @@ export function DetectionResults({
         
         <Button
           variant="outline"
-          onClick={() => setSelectedPieces(new Set(result.detected_pieces.map(p => p.id)))}
+          onClick={() => setSelectedPieces(new Set(detectedPieces.map(p => p.id)))}
         >
           Select All
         </Button>

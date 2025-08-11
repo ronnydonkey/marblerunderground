@@ -8,7 +8,7 @@ import type {
   BuildSession, 
   ProgressStep,
   LearningProgress,
-  Badge 
+  Badge
 } from '@/lib/types/ai-build-advisor'
 
 export function useAIBuildAdvisor() {
@@ -21,7 +21,7 @@ export function useAIBuildAdvisor() {
   const advisor = useMemo(() => new AIBuildAdvisor(), [])
 
   // Start a new build session
-  const startBuildSession = useCallback(async (preferences?: BuildPreferences) => {
+  const startBuildSession = useCallback(async (preferences?: unknown) => {
     try {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Authentication required')
@@ -30,7 +30,7 @@ export function useAIBuildAdvisor() {
       setError(null)
 
       // Generate AI build suggestions
-      const suggestions = await advisor.generateBuildSuggestions(user.id, preferences)
+      const suggestions = await advisor.generateBuildSuggestions(user.id, preferences as any)
       
       // Create new session
       const session: BuildSession = {
@@ -127,7 +127,7 @@ export function useAIBuildAdvisor() {
     if (currentBuild && updatedProgress.filter(p => p.status === 'completed').length === currentBuild.step_by_step_instructions.length) {
       await completeBuild()
     }
-  }, [currentSession, buildSuggestions, completeBuild])
+  }, [currentSession, buildSuggestions])
 
   // Record learning achievement
   const recordLearning = useCallback(async (

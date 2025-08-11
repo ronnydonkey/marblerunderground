@@ -38,7 +38,7 @@ export interface AICollectionSession {
   id: string
   user_id: string
   session_name: string
-  photos: PhotoAnalysisResult[]
+  photos: import('@/lib/types/database').PhotoAnalysisResult[]
   total_pieces_detected: number
   status: 'active' | 'completed' | 'cancelled'
   auto_add_threshold: number // Confidence threshold for auto-adding to collection

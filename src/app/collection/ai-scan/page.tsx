@@ -7,7 +7,8 @@ import { DetectionResults } from '@/components/ai-collection/detection-results'
 import { Button } from '@/components/ui/button'
 import { useAICollection } from '@/lib/hooks/use-ai-collection'
 import { Sparkles, Archive, CheckCircle2 } from 'lucide-react'
-import type { PhotoAnalysisResult, CollectionUpdateResult, DetectedPiece } from '@/lib/types/ai-collection'
+import type { CollectionUpdateResult, DetectedPiece } from '@/lib/types/ai-collection'
+import type { PhotoAnalysisResult } from '@/lib/types/database'
 
 export default function AIScanPage() {
   const {
@@ -63,7 +64,7 @@ export default function AIScanPage() {
     setAnalysisResults(prev => 
       prev.map(result => ({
         ...result,
-        detected_pieces: result.detected_pieces.filter(p => p.id !== pieceId)
+        detected_pieces: (result.detected_pieces as DetectedPiece[]).filter(p => p.id !== pieceId)
       }))
     )
   }

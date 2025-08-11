@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 import Image from 'next/image'
 import { Camera, Upload, X, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { PhotoAnalysisResult } from '@/lib/types/ai-collection'
+import type { PhotoAnalysisResult } from '@/lib/types/database'
 
 interface PhotoUploadProps {
   onPhotoAnalyzed: (result: PhotoAnalysisResult) => void
