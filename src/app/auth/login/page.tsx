@@ -20,12 +20,12 @@ export default function LoginPage() {
             <path d="M12 1v6m0 6v6" />
             <path d="m9 9 3 3 3-3" />
           </svg>
-          GravityPlay
+          Marble Runderground
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
-              &ldquo;GravityPlay transformed how I catalog and discover new marble run pieces. The compatibility matrix alone has saved me hours of research.&rdquo;
+              &ldquo;Marble Runderground transformed how I catalog and discover new marble run pieces. The compatibility matrix alone has saved me hours of research.&rdquo;
             </p>
             <footer className="text-sm">Sarah Chen, Marble Run Enthusiast</footer>
           </blockquote>

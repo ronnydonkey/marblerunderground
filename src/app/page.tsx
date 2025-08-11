@@ -11,7 +11,7 @@ export default function HomePage() {
             <div className="flex flex-col items-center space-y-4 text-center text-white">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Welcome to GravityPlay
+                  Welcome to Marble Runderground
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl">
                   The definitive catalog and community for marble run enthusiasts. Discover, build, and share incredible marble run creations.
@@ -109,10 +109,10 @@ export default function HomePage() {
                 <path d="M12 1v6m0 6v6" />
                 <path d="m9 9 3 3 3-3" />
               </svg>
-              <span className="text-lg font-bold">GravityPlay</span>
+              <span className="text-lg font-bold">Marble Runderground</span>
             </div>
             <p className="text-sm text-gray-400">
-              © 2024 GravityPlay. The ultimate marble run platform.
+              © 2024 Marble Runderground. The ultimate marble run platform.
             </p>
           </div>
         </div>

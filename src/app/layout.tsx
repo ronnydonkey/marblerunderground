@@ -9,12 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "GravityPlay - The Ultimate Marble Run Platform",
+  title: "Marble Runderground - The Ultimate Marble Run Platform",
   description: "The definitive catalog and community for marble run enthusiasts. Discover, build, and share incredible marble run creations.",
   keywords: ["marble run", "gravitrax", "marble genius", "hubelino", "quadrilla", "marble track", "building toys"],
-  authors: [{ name: "GravityPlay Team" }],
-  creator: "GravityPlay",
-  publisher: "GravityPlay",
+  authors: [{ name: "Marble Runderground Team" }],
+  creator: "Marble Runderground",
+  publisher: "Marble Runderground",
   formatDetection: {
     email: false,
     address: false,

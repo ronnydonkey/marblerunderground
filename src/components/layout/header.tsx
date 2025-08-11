@@ -27,7 +27,7 @@ export function Header() {
               <path d="M12 1v6m0 6v6" />
               <path d="m9 9 3 3 3-3" />
             </svg>
-            <span className="text-lg font-bold text-gray-900">GravityPlay</span>
+            <span className="text-lg font-bold text-gray-900">Marble Runderground</span>
           </Link>
 
           {/* Navigation */}

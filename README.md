@@ -1,8 +1,8 @@
-# GravityPlay - The Ultimate Marble Run Platform
+# Marble Runderground - The Ultimate Marble Run Platform
 
 The definitive catalog and community for marble run enthusiasts. Discover, build, and share incredible marble run creations.
 
-🌐 **Live Site**: [gravityplay.fun](https://gravityplay.fun)
+🌐 **Live Site**: [marblerunderground.com](https://www.marblerunderground.com)
 
 ## Features
 

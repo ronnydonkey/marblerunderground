@@ -62,7 +62,7 @@ export function RegisterForm() {
     <div className="mx-auto max-w-sm space-y-6">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Create account</h1>
-        <p className="text-muted-foreground">Join the GravityPlay community</p>
+        <p className="text-muted-foreground">Join the Marble Runderground community</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

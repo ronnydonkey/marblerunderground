@@ -20,14 +20,14 @@ export default function RegisterPage() {
             <path d="M12 1v6m0 6v6" />
             <path d="m9 9 3 3 3-3" />
           </svg>
-          GravityPlay
+          Marble Runderground
         </div>
         <div className="relative z-20 mt-auto">
           <blockquote className="space-y-2">
             <p className="text-lg">
               &ldquo;Join thousands of marble run builders sharing knowledge, compatibility data, and incredible builds.&rdquo;
             </p>
-            <footer className="text-sm">GravityPlay Community</footer>
+            <footer className="text-sm">Marble Runderground Community</footer>
           </blockquote>
         </div>
       </div>

@@ -44,7 +44,7 @@ export function LoginForm() {
     <div className="mx-auto max-w-sm space-y-6">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Welcome back</h1>
-        <p className="text-muted-foreground">Sign in to your GravityPlay account</p>
+        <p className="text-muted-foreground">Sign in to your Marble Runderground account</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
