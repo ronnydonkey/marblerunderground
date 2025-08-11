@@ -98,6 +98,71 @@ export interface UserCollection {
   piece_type?: PieceType
 }
 
+export interface AICollectionSession {
+  id: string
+  user_id: string
+  session_name: string
+  status: 'active' | 'completed' | 'cancelled'
+  auto_add_threshold: number
+  total_pieces_detected: number
+  created_at: string
+  completed_at?: string
+  updated_at: string
+}
+
+export interface PhotoAnalysisResult {
+  id: string
+  session_id: string
+  photo_url: string
+  status: 'processing' | 'completed' | 'failed'
+  detected_pieces: any[] // JSONB array
+  total_pieces_detected: number
+  processing_time_ms: number
+  confidence_threshold: number
+  error_message?: string
+  created_at: string
+}
+
+export interface UnknownPiece {
+  id: string
+  user_id: string
+  session_id?: string
+  predicted_name: string
+  predicted_brand: string
+  predicted_category: string
+  confidence: number
+  photo_url?: string
+  bounding_box?: any // JSONB
+  description?: string
+  user_confirmed: boolean
+  votes_count: number
+  created_at: string
+  updated_at: string
+}
+
+export interface UnknownPieceVote {
+  id: string
+  unknown_piece_id: string
+  user_id: string
+  vote_type: 'correct' | 'incorrect' | 'similar'
+  suggested_name?: string
+  suggested_brand?: string
+  notes?: string
+  created_at: string
+}
+
+export interface CollectionImportHistory {
+  id: string
+  user_id: string
+  session_id?: string
+  import_type: 'ai_scan' | 'manual_photo' | 'bulk_upload' | 'manual_entry'
+  pieces_added: number
+  pieces_updated: number
+  confidence_score?: number
+  notes?: string
+  created_at: string
+}
+
 export type Database = {
   public: {
     Tables: {

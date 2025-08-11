@@ -358,7 +358,7 @@ ON CONFLICT (brand_id, slug) DO NOTHING;
 Now add your environment variables to Vercel:
 
 1. Go to your Vercel dashboard
-2. Select the `gravityplay` project  
+2. Select the `marblerunderground` project  
 3. Go to **Settings** > **Environment Variables**
 4. Add these variables:
 

@@ -1,12 +1,12 @@
-# GravityPlay Deployment Guide
+# Marble Runderground Deployment Guide
 
 ## Prerequisites
 
-Before deploying GravityPlay, ensure you have:
+Before deploying Marble Runderground, ensure you have:
 
 1. **Supabase Project**: Create a new project at [supabase.com](https://supabase.com)
 2. **Vercel Account**: Sign up at [vercel.com](https://vercel.com)
-3. **Domain**: gravityplay.fun is configured and ready
+3. **Domain**: marblerunderground.com is configured and ready
 
 ## Database Setup
 
@@ -53,13 +53,13 @@ Add these environment variables in Vercel dashboard:
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-NEXT_PUBLIC_APP_URL=https://gravityplay.fun
+NEXT_PUBLIC_APP_URL=https://marblerunderground.com
 NODE_ENV=production
 ```
 
 ### 3. Domain Configuration
 1. Go to Project Settings > Domains in Vercel
-2. Add your custom domain: `gravityplay.fun`
+2. Add your custom domain: `marblerunderground.com`
 3. Configure DNS records as instructed
 4. Enable HTTPS (automatic with Vercel)
 
