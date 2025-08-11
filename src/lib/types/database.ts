@@ -115,7 +115,7 @@ export interface PhotoAnalysisResult {
   session_id: string
   photo_url: string
   status: 'processing' | 'completed' | 'failed'
-  detected_pieces: any[] // JSONB array
+  detected_pieces: unknown[] // JSONB array
   total_pieces_detected: number
   processing_time_ms: number
   confidence_threshold: number
@@ -132,7 +132,7 @@ export interface UnknownPiece {
   predicted_category: string
   confidence: number
   photo_url?: string
-  bounding_box?: any // JSONB
+  bounding_box?: unknown // JSONB
   description?: string
   user_confirmed: boolean
   votes_count: number

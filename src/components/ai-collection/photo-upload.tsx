@@ -1,7 +1,8 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { Camera, Upload, X, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
+import Image from 'next/image'
+import { Camera, Upload, X, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { PhotoAnalysisResult } from '@/lib/types/ai-collection'
 
@@ -148,9 +149,11 @@ export function PhotoUpload({
       ) : (
         <div className="relative">
           <div className="relative rounded-lg overflow-hidden">
-            <img
+            <Image
               src={preview}
               alt="Preview"
+              width={400}
+              height={256}
               className="w-full h-64 object-cover"
             />
             

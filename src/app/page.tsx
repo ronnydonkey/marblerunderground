@@ -18,7 +18,6 @@ import {
   Star,
   TrendingUp,
   Users,
-  Database,
   Shield,
   Rocket
 } from 'lucide-react'

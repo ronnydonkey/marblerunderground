@@ -107,7 +107,7 @@ export function useCatalogSearch() {
 
       // Apply sorting
       const sortField = sortOption.field === 'brand' ? 'brands.name' : sortOption.field
-      query = query.order(sortField as any, { ascending: sortOption.direction === 'asc' })
+      query = query.order(sortField as keyof PieceWithBrand, { ascending: sortOption.direction === 'asc' })
 
       const { data, error } = await query
 
@@ -134,7 +134,7 @@ export function useCatalogSearch() {
   }, [pieces])
 
   // Filter and sort methods
-  const updateFilter = (key: keyof CatalogFilters, value: any) => {
+  const updateFilter = (key: keyof CatalogFilters, value: string | null) => {
     setFilters(prev => ({ ...prev, [key]: value }))
   }
 

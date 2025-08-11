@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, X, Eye, AlertTriangle, Package, Zap } from 'lucide-react'
+import { X, Eye, AlertTriangle, Package, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { DetectedPiece, PhotoAnalysisResult } from '@/lib/types/ai-collection'
 
@@ -150,7 +150,7 @@ export function DetectionResults({
           </div>
           
           <div className="divide-y">
-            {result.detected_pieces.map((piece, index) => (
+            {result.detected_pieces.map((piece) => (
               <div
                 key={piece.id}
                 className={`p-4 hover:bg-gray-50 transition-colors ${

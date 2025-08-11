@@ -254,7 +254,7 @@ export default function BuildAdvisorPage() {
             <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border p-6">
               <h3 className="text-lg font-semibold mb-4 flex items-center">
                 <Lightbulb className="h-6 w-6 text-yellow-500 mr-2" />
-                What You'll Learn
+                What You&apos;ll Learn
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
@@ -347,7 +347,7 @@ export default function BuildAdvisorPage() {
 
                   {/* Learning Highlights */}
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">What You'll Learn:</h4>
+                    <h4 className="font-medium text-gray-900 mb-2">What You&apos;ll Learn:</h4>
                     <div className="space-y-2">
                       {build.educational_objectives.slice(0, 2).map((objective, idx) => (
                         <div key={idx} className="flex items-start space-x-2 text-sm">

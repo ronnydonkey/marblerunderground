@@ -6,8 +6,8 @@ import { PhotoUpload } from '@/components/ai-collection/photo-upload'
 import { DetectionResults } from '@/components/ai-collection/detection-results'
 import { Button } from '@/components/ui/button'
 import { useAICollection } from '@/lib/hooks/use-ai-collection'
-import { Sparkles, Archive, BarChart3, CheckCircle2 } from 'lucide-react'
-import type { PhotoAnalysisResult, CollectionUpdateResult } from '@/lib/types/ai-collection'
+import { Sparkles, Archive, CheckCircle2 } from 'lucide-react'
+import type { PhotoAnalysisResult, CollectionUpdateResult, DetectedPiece } from '@/lib/types/ai-collection'
 
 export default function AIScanPage() {
   const {
@@ -46,7 +46,11 @@ export default function AIScanPage() {
     setAnalysisResults(prev => [...prev, result])
   }
 
-  const handleAddToCollection = async (pieces: any[], forceAdd = false) => {
+  const handlePhotoUpload = async (file: File): Promise<PhotoAnalysisResult> => {
+    return analyzePhoto(file, 0.8)
+  }
+
+  const handleAddToCollection = async (pieces: DetectedPiece[], forceAdd = false) => {
     try {
       const result = await addToCollection(pieces, forceAdd)
       setCollectionResults(prev => [...prev, result])
@@ -216,7 +220,7 @@ export default function AIScanPage() {
             {/* Photo Upload */}
             <PhotoUpload
               onPhotoAnalyzed={handlePhotoAnalyzed}
-              onUpload={analyzePhoto}
+              onUpload={handlePhotoUpload}
               isProcessing={isProcessing}
             />
 

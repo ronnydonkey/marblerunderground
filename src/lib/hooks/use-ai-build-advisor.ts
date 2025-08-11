@@ -21,7 +21,7 @@ export function useAIBuildAdvisor() {
   const advisor = useMemo(() => new AIBuildAdvisor(), [])
 
   // Start a new build session
-  const startBuildSession = useCallback(async (preferences?: any) => {
+  const startBuildSession = useCallback(async (preferences?: BuildPreferences) => {
     try {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) throw new Error('Authentication required')
@@ -127,7 +127,7 @@ export function useAIBuildAdvisor() {
     if (currentBuild && updatedProgress.filter(p => p.status === 'completed').length === currentBuild.step_by_step_instructions.length) {
       await completeBuild()
     }
-  }, [currentSession, buildSuggestions])
+  }, [currentSession, buildSuggestions, completeBuild])
 
   // Record learning achievement
   const recordLearning = useCallback(async (
