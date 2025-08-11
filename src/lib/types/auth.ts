@@ -25,4 +25,5 @@ export interface AuthContextType extends AuthState {
   }) => Promise<{ error: Error | null }>
   signOut: () => Promise<{ error: Error | null }>
   resetPassword: (email: string) => Promise<{ error: Error | null }>
+  signInWithGoogle: () => Promise<{ error: Error | null }>
 }
